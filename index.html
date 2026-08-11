@@ -4,6 +4,10 @@
 ➡️ Oder: Wie man auf 3.480 m kommt, ohne vom Hüttenwirt als Fundstück abgeholt werden zu müssen.
 </div>
 
+<button onclick="resetChecklist()">
+    🎒 Rucksack wieder ausräumen
+</button>
+
 <br><br><h3>👕 Bekleidung</h3>
 
 <div class="item"><input type="checkbox" id="b1"><label for="b1">🥾 Bergschuhe (wenn deine Schuhe mehr Profil haben als dein Instagram-Account, passt's)</label></div>
@@ -92,3 +96,27 @@
 🍻 Hütte am Abend: „Bestes Bier meines Lebens.“<br>
 😭 Nächster Morgen: „Meine Oberschenkel haben gekündigt.“
 </div>
+
+<script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    checkboxes.forEach(checkbox => {
+        const saved = localStorage.getItem(checkbox.id);
+        checkbox.checked = saved === 'true';
+
+        checkbox.addEventListener('change', () => {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+        });
+    });
+
+    function resetChecklist() {
+        if (confirm("🎒 Wirklich alles wieder ausräumen?\n\nAlle gesetzten Häkchen werden entfernt.")) {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+                localStorage.removeItem(checkbox.id);
+            });
+
+            alert("✅ Rucksack erfolgreich ausgeräumt!");
+        }
+    }
+</script>
