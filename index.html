@@ -1,122 +1,226 @@
-<h2>🏔️ Packliste Hohe Wilde</h2>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hohe Wilde Checkliste</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
 
-<div class="note">
-<br>➡️ Oder: Wie man auf 3.480 m kommt, ohne vom Hüttenwirt als Fundstück abgeholt werden zu müssen.
-</div>
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
 
-<button onclick="resetChecklist()">
-    🎒 Rucksack wieder ausräumen
-</button>
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-<br><br><h3>👕 Bekleidung</h3>
+    h2 {
+      margin-top: 32px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 8px;
+    }
 
-<div class="item"><input type="checkbox" id="b1"><label for="b1">🥾 Bergschuhe (wenn deine Schuhe mehr Profil haben als dein Instagram-Account, passt's)</label></div>
+    h3 {
+      margin-top: 28px;
+      margin-bottom: 8px;
+    }
 
-<div class="item"><input type="checkbox" id="b2"><label for="b2">🧦 Wandersocken (Blasenpflaster sind zwar modern, aber nicht zwingend notwendig)</label></div>
+    .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin: 10px 0;
+      padding: 8px;
+      border-radius: 8px;
+    }
 
-<div class="item"><input type="checkbox" id="b3"><label for="b3">👕 Funktionsshirt (Baumwolle verwandelt sich auf dem Berg zuverlässig in einen nassen Waschlappen)</label></div>
+    .item:hover {
+      background: #f9fafb;
+    }
 
-<div class="item"><input type="checkbox" id="b4"><label for="b4">🧥 Fleecejacke (für den Moment, wenn aus "angenehme 25 Grad" plötzlich "warum ist es hier wie im Kühlschrank?" wird)</label></div>
+    input[type="checkbox"] {
+      transform: scale(1.3);
+      margin-top: 4px;
+      cursor: pointer;
+    }
 
-<div class="item"><input type="checkbox" id="b5"><label for="b5">🌧️ Regenjacke (damit du wetterfest aussiehst, auch wenn du innerlich bereits aufgegeben hast)</label></div>
+    label {
+      flex: 1;
+      line-height: 1.5;
+      cursor: pointer;
+    }
 
-<div class="item"><input type="checkbox" id="b6"><label for="b6">👖 Lange Hose (schützt vor Wind, Felsen und Fehlentscheidungen)</label></div>
+    .note {
+      background: #fff7ed;
+      border-left: 4px solid #f59e0b;
+      padding: 12px;
+      margin-top: 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
 
-<div class="item"><input type="checkbox" id="b7"><label for="b7">🧢 Mütze (weil auf 3.480 m Haarstyling offiziell endet)</label></div>
+    .optional {
+      color: #0f766e;
+      font-weight: bold;
+    }
 
-<div class="item"><input type="checkbox" id="b8"><label for="b8">🧤 Dünne Handschuhe (für kalte Finger und dramatische Gipfelfotos)</label></div>
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
 
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 24px;
+      border: none;
+      border-radius: 12px;
+      background: #111827;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
 
-<br><br><h3>🎒 Verpflegung</h3>
+    button:hover {
+      background: #1f2937;
+    }
+  </style>
+</head>
 
-<div class="item"><input type="checkbox" id="v1"><label for="v1">💧 2-3 Liter Wasser (Bier zählt leider nicht zur Flüssigkeitsversorgung. Diese Diskussion wurde schon verloren.)</label></div>
+<body>
+  <div class="container">
+    <h1>🏔️ Packliste Hohe Wilde</h1>
 
-<div class="item"><input type="checkbox" id="v2"><label for="v2">🥪 Jause (Speckbrot = Soforthilfe fürs Motivationstief)</label></div>
+    <div class="note">
+      ➡️ Oder: Wie man auf 3.480 m kommt, ohne vom Hüttenwirt als Fundstück abgeholt werden zu müssen.
+    </div>
 
-<div class="item"><input type="checkbox" id="v3"><label for="v3">🍫 Müsliriegel (Bergsteiger-Diesel)</label></div>
+    <button onclick="resetChecklist()">
+      🎒 Rucksack wieder ausräumen
+    </button>
 
-<div class="item"><input type="checkbox" id="v4"><label for="v4">🍫 Schokolade (medizinisch notwendig)</label></div>
+    <h2>👕 Bekleidung</h2>
 
-<div class="item"><input type="checkbox" id="v5"><label for="v5">🚨 Notfall-Schokolade (für echte Krisen)</label></div>
+    <div class="item"><input type="checkbox" id="b1"><label for="b1">🥾 Bergschuhe (wenn deine Schuhe mehr Profil haben als dein Instagram-Account, passt's)</label></div>
+    <div class="item"><input type="checkbox" id="b2"><label for="b2">🧦 Wandersocken (Blasenpflaster sind zwar modern, aber nicht zwingend notwendig)</label></div>
+    <div class="item"><input type="checkbox" id="b3"><label for="b3">👕 Funktionsshirt (Baumwolle verwandelt sich auf dem Berg zuverlässig in einen nassen Waschlappen)</label></div>
+    <div class="item"><input type="checkbox" id="b4"><label for="b4">🧥 Fleecejacke (für den Moment, wenn aus "angenehme 25 Grad" plötzlich "warum ist es hier wie im Kühlschrank?" wird)</label></div>
+    <div class="item"><input type="checkbox" id="b5"><label for="b5">🌧️ Regenjacke (damit du wetterfest aussiehst, auch wenn du innerlich bereits aufgegeben hast)</label></div>
+    <div class="item"><input type="checkbox" id="b6"><label for="b6">👖 Lange Hose (schützt vor Wind, Felsen und Fehlentscheidungen)</label></div>
+    <div class="item"><input type="checkbox" id="b7"><label for="b7">🧢 Mütze (weil auf 3.480 m Haarstyling offiziell endet)</label></div>
+    <div class="item"><input type="checkbox" id="b8"><label for="b8">🧤 Dünne Handschuhe (für kalte Finger und dramatische Gipfelfotos)</label></div>
 
-<div class="item"><input type="checkbox" id="v6"><label for="v6">🚨🚨 Notfall-Notfall-Schokolade (wenn die erste Notfall-Schokolade schon weg ist)</label></div>
+    <h2>🎒 Verpflegung</h2>
 
-<br><br><h3>📱 Technik & Sicherheit</h3>
+    <div class="item"><input type="checkbox" id="v1"><label for="v1">💧 2-3 Liter Wasser (Bier zählt leider nicht zur Flüssigkeitsversorgung. Diese Diskussion wurde schon verloren.)</label></div>
+    <div class="item"><input type="checkbox" id="v2"><label for="v2">🥪 Jause (Speckbrot = Soforthilfe fürs Motivationstief)</label></div>
+    <div class="item"><input type="checkbox" id="v3"><label for="v3">🍫 Müsliriegel (Bergsteiger-Diesel)</label></div>
+    <div class="item"><input type="checkbox" id="v4"><label for="v4">🍫 Schokolade (medizinisch notwendig)</label></div>
+    <div class="item"><input type="checkbox" id="v5"><label for="v5">🚨 Notfall-Schokolade (für echte Krisen)</label></div>
+    <div class="item"><input type="checkbox" id="v6"><label for="v6">🚨🚨 Notfall-Notfall-Schokolade (wenn die erste Notfall-Schokolade schon weg ist)</label></div>
 
-<div class="item"><input type="checkbox" id="s1"><label for="s1">📱 Handy (für Navigation und die obligatorische Gipfel-Selfie-Session)</label></div>
+    <div class="note">
+      🍫 <strong>Regel Nr. 1 am Berg:</strong><br>
+      Nimm immer doppelt so viele Riegel mit, wie du glaubst zu brauchen.<br><br>
 
-<div class="item"><input type="checkbox" id="s2"><label for="s2">🔋 Powerbank (weil 246 Fotos vom Panorama überraschend viel Akku brauchen)</label></div>
+      🍫 <strong>Regel Nr. 2:</strong><br>
+      Du wirst trotzdem alle essen.
+    </div>
 
-<div class="item"><input type="checkbox" id="s3"><label for="s3">🔦 Stirnlampe (entweder komplett unnötig oder absolut lebensrettend)</label></div>
+    <h2>📱 Technik & Sicherheit</h2>
 
-<div class="item"><input type="checkbox" id="s4"><label for="s4">⛑️ Erste-Hilfe-Set (damit man wenigstens professionell aussieht, wenn etwas passiert)</label></div>
+    <div class="item"><input type="checkbox" id="s1"><label for="s1">📱 Handy (für Navigation und die obligatorische Gipfel-Selfie-Session)</label></div>
+    <div class="item"><input type="checkbox" id="s2"><label for="s2">🔋 Powerbank (weil 246 Fotos vom Panorama überraschend viel Akku brauchen)</label></div>
+    <div class="item"><input type="checkbox" id="s3"><label for="s3">🔦 Stirnlampe (entweder komplett unnötig oder absolut lebensrettend)</label></div>
+    <div class="item"><input type="checkbox" id="s4"><label for="s4">⛑️ Erste-Hilfe-Set (damit man wenigstens professionell aussieht, wenn etwas passiert)</label></div>
+    <div class="item"><input type="checkbox" id="s5"><label for="s5">🕶️ Sonnenbrille (Sonnenbrand in den Augen klingt lustig, ist es aber nicht)</label></div>
+    <div class="item"><input type="checkbox" id="s6"><label for="s6">🧴 Sonnencreme (der Berg merkt sich jeden, der sagt: "Heute brauche ich keine.")</label></div>
 
-<div class="item"><input type="checkbox" id="s5"><label for="s5">🕶️ Sonnenbrille (Sonnenbrand in den Augen klingt lustig, ist es aber nicht)</label></div>
+    <h2>🛏️ Für die Stettiner Hütte</h2>
 
-<div class="item"><input type="checkbox" id="s6"><label for="s6">🧴 Sonnencreme (der Berg merkt sich jeden, der sagt: "Heute brauche ich keine.")</label></div>
+    <div class="item"><input type="checkbox" id="h1"><label for="h1">🛌 Hüttenschlafsack (Pflicht, auch wenn du frisch geduscht bist)</label></div>
+    <div class="item"><input type="checkbox" id="h2"><label for="h2">🪥 Zahnbürste (für den Gipfelsieger-Look am nächsten Morgen)</label></div>
+    <div class="item"><input type="checkbox" id="h3"><label for="h3">👕 Frisches Shirt (deine Zimmernachbarn werden es dir danken)</label></div>
+    <div class="item"><input type="checkbox" id="h4"><label for="h4">💶 Bargeld (Bier schlägt nicht immer kontaktlos an)</label></div>
+    <div class="item"><input type="checkbox" id="h5"><label for="h5">🎧 Ohrstöpsel (die wichtigste Sicherheitsausrüstung der Nacht)</label></div>
 
+    <div class="note">
+      😴 <strong>Warum Ohrstöpsel?</strong><br><br>
+      • Der normale Schnarcher<br>
+      • Der Motorsägen-Schnarcher<br>
+      • Der Dieselgenerator-Schnarcher<br>
+      • Und der Typ, bei dem man sich fragt, ob er überhaupt noch Sauerstoff bekommt
+    </div>
 
-<br><br><h3>🛏️ Für die Stettiner Hütte</h3>
+    <h2>🥾 Optional</h2>
 
-<div class="item"><input type="checkbox" id="h1"><label for="h1">🛌 Hüttenschlafsack (Pflicht, auch wenn du frisch geduscht bist)</label></div>
+    <div class="item"><input type="checkbox" id="o1"><label for="o1">🥾 Trekkingstöcke (deine Knie werden dir am nächsten Tag eine Dankes-E-Mail schicken)</label></div>
+    <div class="item"><input type="checkbox" id="o2"><label for="o2">⛑️ Helm (schadet nie und macht +15 % Bergsteigeroptik)</label></div>
+    <div class="item"><input type="checkbox" id="o3"><label for="o3">📷 Kamera (falls das Handy nach den ersten 500 Gipfelfotos aufgibt)</label></div>
+    <div class="item"><input type="checkbox" id="o4"><label for="o4">🐻 Gummibären (haben schon ganze Expeditionen gerettet)</label></div>
+    <div class="item"><input type="checkbox" id="o5"><label for="o5">🃏 Kartenspiel für die Hütte (falls das Bier nicht reicht)</label></div>
+    <div class="item"><input type="checkbox" id="o6"><label for="o6">😄 Humor (Pflichtausrüstung)</label></div>
 
-<div class="item"><input type="checkbox" id="h2"><label for="h2">🪥 Zahnbürste (für den Gipfelsieger-Look am nächsten Morgen)</label></div>
+    <div class="note">
+      🏔️ <strong>Tourablauf laut Statistik:</strong><br><br>
 
-<div class="item"><input type="checkbox" id="h3"><label for="h3">👕 Frisches Shirt (deine Zimmernachbarn werden es dir danken)</label></div>
+      🚶 Pfelders: „Heute wird eine gemütliche Tour.“<br>
+      😅 Lazinser Alm: „Ganz schön warm.“<br>
+      🥵 Kurz vor der Stettiner Hütte: „Wer hat diese Hütte so weit nach oben gebaut?“<br>
+      🍺 Stettiner Hütte: „Eigentlich reicht der Ausblick auch ohne Gipfel.“<br>
+      🤡 15 Minuten Richtung Hohe Wilde: „Jetzt ziehe ich das durch.“<br>
+      😳 Erstes Drahtseil: „Aha. Das war also mit 'etwas ausgesetzt' gemeint.“<br>
+      📸 Gipfel: „Unglaublich!“<br>
+      🦵 Abstieg: „Warum haben Berge eigentlich keine Rolltreppen?“<br>
+      🍻 Hütte am Abend: „Bestes Bier meines Lebens.“<br>
+      😭 Nächster Morgen: „Meine Oberschenkel haben gekündigt.“
+    </div>
 
-<div class="item"><input type="checkbox" id="h4"><label for="h4">💶 Bargeld (Bier schlägt nicht immer kontaktlos an)</label></div>
+    <button onclick="resetChecklist()">
+      🎒 Rucksack wieder ausräumen
+    </button>
 
-<div class="item"><input type="checkbox" id="h5"><label for="h5">🎧 Ohrstöpsel (die wichtigste Sicherheitsausrüstung der Nacht)</label></div>
+    <div class="footer">
+      Stettiner Hütte & Hohe Wilde 🏔️🍺
+    </div>
+  </div>
 
-<br><br><h3>🥾 Optional</h3>
-
-<div class="item"><input type="checkbox" id="o1"><label for="o1">🥾 Trekkingstöcke (deine Knie werden dir am nächsten Tag eine Dankes-E-Mail schicken)</label></div>
-
-<div class="item"><input type="checkbox" id="o2"><label for="o2">⛑️ Helm (schadet nie und macht +15 % Bergsteigeroptik)</label></div>
-
-<div class="item"><input type="checkbox" id="o3"><label for="o3">📷 Kamera (falls das Handy nach den ersten 500 Gipfelfotos aufgibt)</label></div>
-
-<div class="item"><input type="checkbox" id="o4"><label for="o4">🐻 Gummibären (haben schon ganze Expeditionen gerettet)</label></div>
-
-<div class="item"><input type="checkbox" id="o5"><label for="o5">🃏 Kartenspiel für die Hütte (falls das Bier nicht reicht)</label></div>
-
-<div class="item"><input type="checkbox" id="o6"><label for="o6">😄 Humor (Pflichtausrüstung)</label></div>
-
-
-<div class="note">
-<br><br><h3>🏔️ Tourablauf laut Statistik:</h3>
-🚶 Pfelders: „Heute wird eine gemütliche Tour.“<br>
-😅 Lazinser Alm: „Ganz schön warm.“<br>
-🥵 Kurz vor der Stettiner Hütte: „Wer hat diese Hütte so weit nach oben gebaut?“<br>
-🍺 Stettiner Hütte: „Eigentlich reicht der Ausblick auch ohne Gipfel.“<br>
-🤡 15 Minuten Richtung Hohe Wilde: „Jetzt ziehe ich das durch.“<br>
-😳 Erstes Drahtseil: „Aha. Das war also mit 'etwas ausgesetzt' gemeint.“<br>
-📸 Gipfel: „Unglaublich!“<br>
-🦵 Abstieg: „Warum haben Berge eigentlich keine Rolltreppen?“<br>
-🍻 Hütte am Abend: „Bestes Bier meines Lebens.“<br>
-😭 Nächster Morgen: „Meine Oberschenkel haben gekündigt.“
-</div>
-
-<script>
+  <script>
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
     checkboxes.forEach(checkbox => {
-        const saved = localStorage.getItem(checkbox.id);
-        checkbox.checked = saved === 'true';
+      const saved = localStorage.getItem(checkbox.id);
+      checkbox.checked = saved === 'true';
 
-        checkbox.addEventListener('change', () => {
-            localStorage.setItem(checkbox.id, checkbox.checked);
-        });
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(checkbox.id, checkbox.checked);
+      });
     });
 
     function resetChecklist() {
-        if (confirm("🎒 Wirklich alles wieder ausräumen?\n\nAlle gesetzten Häkchen werden entfernt.")) {
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = false;
-                localStorage.removeItem(checkbox.id);
-            });
-
-            alert("✅ Rucksack erfolgreich ausgeräumt!");
-        }
+      if (confirm("🎒 Wirklich alles wieder ausräumen?\n\nAlle gesetzten Häkchen werden entfernt.")) {
+        checkboxes.forEach(checkbox => {
+          checkbox.checked = false;
+          localStorage.removeItem(checkbox.id);
+        });
+      }
     }
-</script>
+  </script>
+</body>
+</html>
